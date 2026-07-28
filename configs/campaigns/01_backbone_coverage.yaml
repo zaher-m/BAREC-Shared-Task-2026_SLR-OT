@@ -1,0 +1,57 @@
+# Campaign 1: more members, as cheaply as possible.
+#
+# exp002 showed the combiner is saturated and that pool breadth is what still pays: 10 to 39
+# members was worth +0.19 QWK, more than any change of method. So this queue adds backbones and
+# objectives that are not in the pool yet, all under the same protocol (train+dev for fitting,
+# public test held out for early stopping and the 18 cuts) so every member can be selected on
+# the same held-out set.
+#
+# Ordered by how different each member should be, not by how good it should be. A mediocre
+# member that disagrees with the pool helps the ensemble more than a strong one that duplicates
+# it.
+#
+# The _ad suffix records the protocol. It is also what later made these members unusable for
+# estimation: early stopping on the calibration split inflates their scores there by 1.06 QWK
+# (exp010).
+
+name: 01_backbone_coverage
+trainer: encoder
+
+defaults:
+  variant: d3tok
+  max_len: 160
+  bs: 32
+  lr: 2.0e-5
+  epochs: 8
+  patience: 2
+  seed: 42
+  alldata: true
+
+members:
+  # backbones under-represented in the pool, strongest objective first
+  - {tag: marbert_soft_ad,    backbone: marbert,    objective: soft}
+  - {tag: camelbert_soft_ad,  backbone: camelbert,  objective: soft}
+  - {tag: araelectra_soft_ad, backbone: araelectra, objective: soft}
+  - {tag: arbertv2_soft_ad,   backbone: arbertv2,   objective: soft}
+
+  # a backbone the pool has never seen
+  - {tag: twitter_soft_ad,    backbone: twitter,    objective: soft}
+  - {tag: twitter_corn_ad,    backbone: twitter,    objective: corn}
+
+  # an objective the pool has never seen (ordinal log-loss)
+  - {tag: arabertv2_oll_ad,   backbone: arabertv2,  objective: oll}
+  - {tag: araelectra_oll_ad,  backbone: araelectra, objective: oll}
+
+  # remaining backbone x objective gaps
+  - {tag: marbert_corn_ad,    backbone: marbert,    objective: corn}
+  - {tag: camelbert_corn_ad,  backbone: camelbert,  objective: corn}
+  - {tag: araelectra_wkl_ad,  backbone: araelectra, objective: wkl}
+  - {tag: arbertv2_reg_ad,    backbone: arbertv2,   objective: reg}
+  - {tag: aramodern_soft_ad,  backbone: aramodern,  objective: soft, variant: raw}
+  - {tag: arabertv2_reg_ad,   backbone: arabertv2,  objective: reg}
+  - {tag: marbert_emd_ad,     backbone: marbert,    objective: emd}
+  - {tag: camelbert_emd_ad,   backbone: camelbert,  objective: emd}
+
+  # seed diversity on the two strongest configs
+  - {tag: arabertv2_wkl_ad2,  backbone: arabertv2,  objective: wkl,  seed: 2027}
+  - {tag: arabertv2_soft_ad2, backbone: arabertv2,  objective: soft, seed: 2027}

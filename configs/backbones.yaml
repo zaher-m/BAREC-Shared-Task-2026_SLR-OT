@@ -1,0 +1,15 @@
+# Pretrained backbones the pool is built from.
+# aramodern is trained on the raw variant rather than d3tok. Its tokenizer was trained on
+# unsegmented text and morphological segmentation made it worse.
+
+arabertv2:       aubmindlab/bert-base-arabertv2
+arabertv2_large: aubmindlab/bert-large-arabertv2
+araelectra:      aubmindlab/araelectra-base-discriminator
+aramodern:       NAMAA-Space/AraModernBert-Base-V1.0
+arbertv2:        UBC-NLP/ARBERTv2
+camelbert:       CAMeL-Lab/bert-base-arabic-camelbert-mix
+marbert:         UBC-NLP/MARBERTv2
+twitter:         aubmindlab/bert-base-arabertv02-twitter
+
+# trained with slra_ot.cli.train_llm (LoRA + pooled head)
+allam7b:         ALLaM-AI/ALLaM-7B-Instruct-preview

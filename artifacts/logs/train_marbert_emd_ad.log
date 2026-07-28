@@ -1,0 +1,29 @@
+[alldata] train=62155 (train+dev), holdout=test=7286
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 69060.61it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: UBC-NLP/MARBERTv2
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.decoder.weight             | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.decoder.bias               | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+ep0 loss=1.1182 dev_QWK(naive)=81.302 290s
+ep1 loss=0.7474 dev_QWK(naive)=81.735 291s
+ep2 loss=0.5742 dev_QWK(naive)=83.064 291s
+ep3 loss=0.4484 dev_QWK(naive)=81.724 292s
+ep4 loss=0.3594 dev_QWK(naive)=82.459 293s
+ep5 loss=0.2981 dev_QWK(naive)=82.480 291s
+early stop
+[marbert_emd_ad DEV  cal] QWK=83.9508 Acc19=37.87 Acc7=59.11 Acc5=66.39 Acc3=73.80 Adj+-1=72.98 MAE=1.1728
+[marbert_emd_ad TEST cal] QWK=83.9508 Acc19=37.87 Acc7=59.11 Acc5=66.39 Acc3=73.80 Adj+-1=72.98 MAE=1.1728
+saved scores_marbert_emd_ad.npz and checkpoint /SLRA-OT/scripts/../models/marbert_emd_ad

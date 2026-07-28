@@ -1,0 +1,24 @@
+[alldata] train=62155 (train+dev), holdout=test=7286
+
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 197/197 [00:00<00:00, 10790.02it/s]
+[transformers] [1mElectraModel LOAD REPORT[0m from: aubmindlab/araelectra-base-discriminator
+Key                                               | Status     |  | 
+--------------------------------------------------+------------+--+-
+discriminator_predictions.dense_prediction.bias   | UNEXPECTED |  | 
+discriminator_predictions.dense.weight            | UNEXPECTED |  | 
+discriminator_predictions.dense_prediction.weight | UNEXPECTED |  | 
+discriminator_predictions.dense.bias              | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+ep0 loss=2.1233 dev_QWK(naive)=81.143 259s
+ep1 loss=1.4891 dev_QWK(naive)=80.576 260s
+ep2 loss=1.2336 dev_QWK(naive)=82.741 262s
+ep3 loss=1.0395 dev_QWK(naive)=82.146 261s
+ep4 loss=0.8760 dev_QWK(naive)=82.083 262s
+ep5 loss=0.7409 dev_QWK(naive)=82.159 261s
+early stop
+[araelectra_wkl_ad DEV  cal] QWK=84.1303 Acc19=37.40 Acc7=57.16 Acc5=65.92 Acc3=74.25 Adj+-1=72.73 MAE=1.1753
+[araelectra_wkl_ad TEST cal] QWK=84.1303 Acc19=37.40 Acc7=57.16 Acc5=65.92 Acc3=74.25 Adj+-1=72.73 MAE=1.1753
+saved scores_araelectra_wkl_ad.npz and checkpoint /SLRA-OT/scripts/../models/araelectra_wkl_ad

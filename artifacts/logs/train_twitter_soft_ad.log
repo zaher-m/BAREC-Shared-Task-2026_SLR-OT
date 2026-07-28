@@ -1,0 +1,27 @@
+[alldata] train=62155 (train+dev), holdout=test=7286
+
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 197/197 [00:00<00:00, 5253.45it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: aubmindlab/bert-base-arabertv02-twitter
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+pooler.dense.bias                          | MISSING    | 
+pooler.dense.weight                        | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+ep0 loss=0.7494 dev_QWK(naive)=81.538 572s
+ep1 loss=0.5134 dev_QWK(naive)=83.508 581s
+ep2 loss=0.4144 dev_QWK(naive)=82.967 573s
+ep3 loss=0.3381 dev_QWK(naive)=82.699 580s
+ep4 loss=0.2745 dev_QWK(naive)=82.204 580s
+early stop
+[twitter_soft_ad DEV  cal] QWK=84.8002 Acc19=34.42 Acc7=57.62 Acc5=65.07 Acc3=73.43 Adj+-1=71.77 MAE=1.1909
+[twitter_soft_ad TEST cal] QWK=84.8002 Acc19=34.42 Acc7=57.62 Acc5=65.07 Acc3=73.43 Adj+-1=71.77 MAE=1.1909
+saved scores_twitter_soft_ad.npz and checkpoint /SLRA-OT/scripts/../models/twitter_soft_ad
