@@ -1,0 +1,110 @@
+{
+  "n_clean": 39,
+  "clean_tags": [
+    "arabertv2_corn_d3",
+    "arabertv2_corn_s2",
+    "arabertv2_emd_d3",
+    "arabertv2_large_corn",
+    "arabertv2_large_corn_raw",
+    "arabertv2_large_emd",
+    "arabertv2_large_reg",
+    "arabertv2_large_reg_raw",
+    "arabertv2_large_soft",
+    "arabertv2_large_wkl",
+    "arabertv2_reg_d3",
+    "arabertv2_reg_s2",
+    "arabertv2_soft_d3",
+    "arabertv2_soft_s2",
+    "arabertv2_wkl_d3",
+    "araelectra_corn_d3",
+    "araelectra_emd_d3",
+    "araelectra_reg_d3",
+    "araelectra_soft_d3",
+    "araelectra_wkl_d3",
+    "aramodern_corn_raw",
+    "aramodern_reg_d3",
+    "aramodern_reg_raw",
+    "aramodern_soft_raw",
+    "arbertv2_corn_d3",
+    "arbertv2_reg_d3",
+    "arbertv2_soft_d3",
+    "camelbert_corn_d3",
+    "camelbert_emd_d3",
+    "camelbert_reg_d3",
+    "camelbert_reg_d3n",
+    "camelbert_soft_d3",
+    "camelbert_wkl_d3",
+    "marbert_corn_d3",
+    "marbert_emd_d3",
+    "marbert_reg_d3",
+    "marbert_reg_d3n",
+    "marbert_soft_d3",
+    "marbert_wkl_d3"
+  ],
+  "results": [
+    {
+      "combiner": "greedy",
+      "rule": "prior-0.65",
+      "cv_qwk": 86.52264625657011,
+      "acc19": 40.41998353005765,
+      "adj": 72.49519626681307,
+      "mae": 1.087839692561076
+    },
+    {
+      "combiner": "bagged m.5",
+      "rule": "prior-0.25",
+      "cv_qwk": 86.51267610812371,
+      "acc19": 37.386769146307984,
+      "adj": 72.96184463354378,
+      "mae": 1.1125446060938786
+    },
+    {
+      "combiner": "greedy",
+      "rule": "prior-0.50",
+      "cv_qwk": 86.48155209925076,
+      "acc19": 39.6651111721109,
+      "adj": 72.72852045017842,
+      "mae": 1.0941531704639034
+    },
+    {
+      "combiner": "bagged m.5",
+      "rule": "free (sub03 rule)",
+      "cv_qwk": 86.45822229514891,
+      "acc19": 35.75349986275048,
+      "adj": 73.33241833653582,
+      "mae": 1.1272303046939336
+    },
+    {
+      "combiner": "greedy",
+      "rule": "prior-0.25",
+      "cv_qwk": 86.45222749943223,
+      "acc19": 38.251441119956084,
+      "adj": 73.18144386494647,
+      "mae": 1.1049958825144113
+    },
+    {
+      "combiner": "greedy",
+      "rule": "free (sub03 rule)",
+      "cv_qwk": 86.41017304354204,
+      "acc19": 36.618171836398574,
+      "adj": 73.52456766401318,
+      "mae": 1.1189953335163327
+    },
+    {
+      "combiner": "bagged m.5",
+      "rule": "prior-0.50",
+      "cv_qwk": 86.40644796798505,
+      "acc19": 39.41806203678287,
+      "adj": 72.33049684326105,
+      "mae": 1.1003293988471041
+    },
+    {
+      "combiner": "bagged m.5",
+      "rule": "prior-0.65",
+      "cv_qwk": 86.39915431558771,
+      "acc19": 40.22783420258029,
+      "adj": 71.95992314026901,
+      "mae": 1.096074663738677
+    }
+  ]
+}
