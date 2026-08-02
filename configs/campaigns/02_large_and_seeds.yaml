@@ -1,0 +1,48 @@
+# Campaign 2: what is left that might not correlate with the 67 members already trained.
+#
+# Campaign 1 filled the obvious backbone x objective gaps. What is left:
+#   - the large AraBERT under objectives it has not had on train+dev
+#   - reseeds of the strongest configs, which is the cheapest decorrelation available
+#   - the two thinnest backbones (twitter, aramodern)
+#
+# Ordered so that if the deadline arrives part-way through, the members that finished are the
+# ones worth having. Same _ad protocol as campaign 1, so they drop straight into the pool.
+#
+# Outcome: cancelled part-way. More backbone x objective combinations had stopped paying,
+# 45 to 66 members only moved CV by +0.007.
+
+name: 02_large_and_seeds
+trainer: encoder
+
+defaults:
+  variant: d3tok
+  max_len: 160
+  bs: 32
+  lr: 2.0e-5
+  epochs: 8
+  patience: 2
+  seed: 42
+  alldata: true
+
+members:
+  # seed diversity on proven-strong base configs (fast, reliably decorrelated)
+  - {tag: arabertv2_corn_ad2,  backbone: arabertv2,  objective: corn, seed: 777}
+  - {tag: arabertv2_emd_ad2,   backbone: arabertv2,  objective: emd,  seed: 777}
+  - {tag: araelectra_corn_ad2, backbone: araelectra, objective: corn, seed: 777}
+  - {tag: marbert_soft_ad2,    backbone: marbert,    objective: soft, seed: 777}
+
+  # objectives the large backbone has never had under the _ad protocol
+  - {tag: arabertv2_large_wkl_ad, backbone: arabertv2_large, objective: wkl, bs: 24, lr: 1.5e-5, epochs: 6}
+  - {tag: arabertv2_large_emd_ad, backbone: arabertv2_large, objective: emd, bs: 24, lr: 1.5e-5, epochs: 6}
+
+  # thin backbones, more objectives
+  - {tag: twitter_wkl_ad,    backbone: twitter,   objective: wkl}
+  - {tag: twitter_emd_ad,    backbone: twitter,   objective: emd}
+  - {tag: aramodern_corn_ad, backbone: aramodern, objective: corn, variant: raw}
+  - {tag: arbertv2_wkl_ad,   backbone: arbertv2,  objective: wkl}
+  - {tag: camelbert_wkl_ad,  backbone: camelbert, objective: wkl}
+  - {tag: marbert_wkl_ad,    backbone: marbert,   objective: wkl}
+
+  # oll on the remaining backbones
+  - {tag: marbert_oll_ad,    backbone: marbert,   objective: oll}
+  - {tag: camelbert_oll_ad,  backbone: camelbert, objective: oll}

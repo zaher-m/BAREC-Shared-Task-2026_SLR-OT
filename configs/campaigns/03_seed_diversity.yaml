@@ -1,0 +1,34 @@
+# Campaign 3: reseed the configs that are actually strong.
+#
+# Campaign 2 was cancelled because more backbone x objective combinations had stopped paying
+# (45 to 66 members only moved CV by +0.007). What did pay was an accident: arabertv2_wkl_ad2,
+# a plain reseed of an existing config, came out at 85.94 solo, second-best in the pool.
+# Reseeding a strong config decorrelates the errors without making the member worse, which is
+# what a weighted mean wants. A new weak backbone gives diversity but costs accuracy.
+#
+# So reseed only the configs at the top of the solo-QWK table, strongest first, so an
+# interrupted queue still leaves the good ones.
+
+name: 03_seed_diversity
+trainer: encoder
+
+defaults:
+  variant: d3tok
+  max_len: 160
+  bs: 32
+  lr: 2.0e-5
+  epochs: 8
+  patience: 2
+  alldata: true
+
+members:
+  - {tag: arabertv2_emd_ad,   backbone: arabertv2,  objective: emd,  seed: 42}     # emd on train+dev, missing from the pool
+  - {tag: arabertv2_emd_ad3,  backbone: arabertv2,  objective: emd,  seed: 31337}
+  - {tag: arabertv2_wkl_ad3,  backbone: arabertv2,  objective: wkl,  seed: 31337}
+  - {tag: arabertv2_soft_ad3, backbone: arabertv2,  objective: soft, seed: 31337}
+  - {tag: arbertv2_soft_ad2,  backbone: arbertv2,   objective: soft, seed: 777}
+  - {tag: aramodern_reg_ad2,  backbone: aramodern,  objective: reg,  seed: 777, variant: raw}
+  - {tag: arabertv2_emd_ad4,  backbone: arabertv2,  objective: emd,  seed: 9091}
+  - {tag: arabertv2_wkl_ad4,  backbone: arabertv2,  objective: wkl,  seed: 9091}
+  - {tag: arabertv2_large_soft_ad2, backbone: arabertv2_large, objective: soft, seed: 777, bs: 24, lr: 1.5e-5, epochs: 6}
+  - {tag: arabertv2_large_corn_ad2, backbone: arabertv2_large, objective: corn, seed: 777, bs: 24, lr: 1.5e-5, epochs: 6}

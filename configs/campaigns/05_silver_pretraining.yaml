@@ -1,0 +1,26 @@
+# Campaign 5: silver-pretrained members (BAREC-10M, then gold fine-tune).
+#
+# Only started after the first silver member (arabertv2_emd_slv) actually beat its plain twin by
+# +1.00 QWK (exp014). Stage 1 alone costs ~65 min per member, so it was not worth repeating on
+# faith. sub03 had already been lost to an unverified assumption.
+#
+# Ordered: strongest objective on the strongest backbone first, then other objectives on the
+# same backbone, then a different backbone for decorrelation. If the deadline arrives part-way
+# through, the members that finished are the ones worth having.
+#
+# The gold stage uses the clean protocol (train split, early-stop on dev), and build_silver
+# already removed every dev/test sentence from the silver corpus, so test stays clean end to
+# end. train_silver writes the blind scores itself, so no separate scoring pass is needed.
+
+name: 05_silver_pretraining
+trainer: silver
+score_blind: false
+
+defaults:
+  variant: d3tok
+
+members:
+  - {tag: arabertv2_soft_slv,  backbone: arabertv2,  objective: soft, seed: 42}
+  - {tag: arabertv2_wkl_slv,   backbone: arabertv2,  objective: wkl,  seed: 42}
+  - {tag: araelectra_corn_slv, backbone: araelectra, objective: corn, seed: 42}
+  - {tag: arabertv2_emd_slv2,  backbone: arabertv2,  objective: emd,  seed: 777}

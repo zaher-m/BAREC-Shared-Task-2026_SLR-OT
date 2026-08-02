@@ -1,0 +1,47 @@
+# Campaign 4: grow the clean pool.
+#
+# Campaigns 1-3 and the LLM run all used the _ad protocol: train on train+dev, early-stop on
+# the public test split. That makes better models but they cannot be used for estimation,
+# because test is also where selection and calibration happen. The inflation from that early
+# stopping measures 1.06 QWK, and it is what sank sub03 (offset -1.90 against the usual -1.42).
+#
+# These runs use the plain protocol instead: train on the BAREC train split, early-stop on dev.
+# Test is then touched by nothing, not training and not selection, so fitting the ensemble on
+# it is fine and its CV number can be trusted.
+#
+# Each member is either a reseed or an objective that backbone has not had. The _c* suffix
+# marks a clean-protocol member.
+#
+# Two streams ran at the same time, so pass --stream a or --stream b. The queue was stopped
+# after three members (arabertv2_{emd,soft,wkl}_c2) when the rest of the time went to
+# campaign 5.
+
+name: 04_clean_pool
+trainer: encoder
+
+defaults:
+  variant: d3tok
+  max_len: 160
+  bs: 32
+  lr: 2.0e-5
+  epochs: 8
+  patience: 2
+
+members:
+  - {stream: a, tag: arabertv2_emd_c2,   backbone: arabertv2,  objective: emd,  seed: 777}
+  - {stream: a, tag: arabertv2_wkl_c2,   backbone: arabertv2,  objective: wkl,  seed: 777}
+  - {stream: a, tag: araelectra_corn_c2, backbone: araelectra, objective: corn, seed: 777}
+  - {stream: a, tag: twitter_soft_c1,    backbone: twitter,    objective: soft, seed: 42}
+  - {stream: a, tag: arabertv2_oll_c1,   backbone: arabertv2,  objective: oll,  seed: 42}
+  - {stream: a, tag: marbert_soft_c2,    backbone: marbert,    objective: soft, seed: 777}
+  - {stream: a, tag: arabertv2_emd_c3,   backbone: arabertv2,  objective: emd,  seed: 31337}
+  - {stream: a, tag: arbertv2_soft_c2,   backbone: arbertv2,   objective: soft, seed: 777}
+
+  - {stream: b, tag: arabertv2_soft_c2,  backbone: arabertv2,  objective: soft, seed: 777}
+  - {stream: b, tag: arabertv2_corn_c2,  backbone: arabertv2,  objective: corn, seed: 777}
+  - {stream: b, tag: araelectra_soft_c2, backbone: araelectra, objective: soft, seed: 777}
+  - {stream: b, tag: twitter_corn_c1,    backbone: twitter,    objective: corn, seed: 42}
+  - {stream: b, tag: araelectra_oll_c1,  backbone: araelectra, objective: oll,  seed: 42}
+  - {stream: b, tag: camelbert_soft_c2,  backbone: camelbert,  objective: soft, seed: 777}
+  - {stream: b, tag: arabertv2_wkl_c3,   backbone: arabertv2,  objective: wkl,  seed: 31337}
+  - {stream: b, tag: aramodern_soft_c1,  backbone: aramodern,  objective: soft, seed: 777, variant: raw}
