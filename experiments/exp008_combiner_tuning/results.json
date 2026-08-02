@@ -1,0 +1,40 @@
+{
+  "n_pool": 66,
+  "results": [
+    {
+      "method": "bagged m.25 s1",
+      "cv_qwk": 86.8520079144438,
+      "secs": 260
+    },
+    {
+      "method": "bagged m.35 x3 seeds",
+      "cv_qwk": 86.80367155101584,
+      "secs": 1096
+    },
+    {
+      "method": "bagged m.50 s1",
+      "cv_qwk": 86.79620140068,
+      "secs": 544
+    },
+    {
+      "method": "blend greedy+bagged+nnls",
+      "cv_qwk": 86.7949408812403,
+      "secs": 470
+    },
+    {
+      "method": "greedy r25",
+      "cv_qwk": 86.79231060537836,
+      "secs": 116
+    },
+    {
+      "method": "greedy r40",
+      "cv_qwk": 86.75576218354442,
+      "secs": 185
+    },
+    {
+      "method": "bagged m.35 s1",
+      "cv_qwk": 86.73569583005283,
+      "secs": 381
+    }
+  ]
+}
