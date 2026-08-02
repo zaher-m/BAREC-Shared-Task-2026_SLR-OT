@@ -1,0 +1,34 @@
+{
+  "results": [
+    {
+      "system": "P66 / test only",
+      "combiner": "bagged greedy",
+      "cv_qwk": 86.79620140068
+    },
+    {
+      "system": "P66 / test only",
+      "combiner": "greedy",
+      "cv_qwk": 86.79231060537836
+    },
+    {
+      "system": "P39 / dev+test",
+      "combiner": "greedy",
+      "cv_qwk": 86.52413553478245
+    },
+    {
+      "system": "P39 / test only",
+      "combiner": "bagged greedy",
+      "cv_qwk": 86.50990695760443
+    },
+    {
+      "system": "P39 / dev+test",
+      "combiner": "bagged greedy",
+      "cv_qwk": 86.48745956974928
+    },
+    {
+      "system": "P39 / test only",
+      "combiner": "greedy",
+      "cv_qwk": 86.41017304354204
+    }
+  ]
+}
