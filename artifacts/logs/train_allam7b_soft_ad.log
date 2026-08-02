@@ -1,0 +1,10 @@
+train=62155  holdout(test)=7286
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:  79%|███████▉  | 230/290 [00:00<00:00, 2298.60it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 2439.13it/s]
+[transformers] [1mLlamaModel LOAD REPORT[0m from: ALLaM-AI/ALLaM-7B-Instruct-preview
+Key            | Status     |  | 
+---------------+------------+--+-
+lm_head.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+trainable params: 40.1M

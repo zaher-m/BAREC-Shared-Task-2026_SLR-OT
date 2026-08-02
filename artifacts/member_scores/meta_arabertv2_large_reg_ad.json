@@ -1,0 +1,28 @@
+{
+  "model": "aubmindlab/bert-large-arabertv2",
+  "variant": "d3tok",
+  "objective": "reg",
+  "max_len": 160,
+  "tag": "arabertv2_large_reg_ad",
+  "dev_qwk_cal": 0.0,
+  "thresholds": [
+    7.25,
+    7.25,
+    7.25,
+    7.25,
+    7.25,
+    7.25,
+    7.5,
+    8.5,
+    9.25,
+    9.25,
+    9.25,
+    9.25,
+    9.25,
+    9.25,
+    9.25,
+    9.25,
+    9.25,
+    9.25
+  ]
+}
