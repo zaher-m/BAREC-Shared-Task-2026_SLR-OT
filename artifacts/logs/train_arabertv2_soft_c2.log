@@ -1,0 +1,25 @@
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9311.73it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: aubmindlab/bert-base-arabertv2
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+ep0 loss=0.7730 dev_QWK(naive)=80.659 688s
+ep1 loss=0.5104 dev_QWK(naive)=83.447 686s
+ep2 loss=0.4112 dev_QWK(naive)=82.364 686s
+ep3 loss=0.3336 dev_QWK(naive)=82.481 687s
+ep4 loss=0.2696 dev_QWK(naive)=81.259 683s
+early stop
+[arabertv2_soft_c2 DEV  cal] QWK=84.2700 Acc19=38.39 Acc7=59.92 Acc5=67.07 Acc3=75.62 Adj+-1=72.07 MAE=1.1878
+[arabertv2_soft_c2 TEST cal] QWK=84.9064 Acc19=37.62 Acc7=59.63 Acc5=65.72 Acc3=73.35 Adj+-1=71.84 MAE=1.1633
+saved scores_arabertv2_soft_c2.npz and checkpoint /SLRA-OT/scripts/../models/arabertv2_soft_c2

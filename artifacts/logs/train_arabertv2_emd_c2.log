@@ -1,0 +1,25 @@
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6831.73it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: aubmindlab/bert-base-arabertv2
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+ep0 loss=1.0985 dev_QWK(naive)=80.923 682s
+ep1 loss=0.7481 dev_QWK(naive)=82.790 679s
+ep2 loss=0.6094 dev_QWK(naive)=82.042 678s
+ep3 loss=0.5096 dev_QWK(naive)=82.128 676s
+ep4 loss=0.4282 dev_QWK(naive)=82.027 678s
+early stop
+[arabertv2_emd_c2 DEV  cal] QWK=83.8125 Acc19=38.52 Acc7=59.86 Acc5=66.46 Acc3=75.27 Adj+-1=71.38 MAE=1.2007
+[arabertv2_emd_c2 TEST cal] QWK=84.3838 Acc19=37.91 Acc7=59.68 Acc5=65.41 Acc3=73.33 Adj+-1=71.86 MAE=1.1739
+saved scores_arabertv2_emd_c2.npz and checkpoint /SLRA-OT/scripts/../models/arabertv2_emd_c2
