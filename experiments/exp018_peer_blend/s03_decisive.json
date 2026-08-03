@@ -1,0 +1,33 @@
+{
+  "testA": {
+    "train": {
+      "n": 63848,
+      "qwk": 98.27961986513411,
+      "exact": 94.19872196466608,
+      "mae": 0.13378649292068662
+    },
+    "validation": {
+      "n": 9431,
+      "qwk": 97.41813350196928,
+      "exact": 94.11515215777754,
+      "mae": 0.16933517124377054
+    },
+    "test": {
+      "n": 13421,
+      "qwk": 98.30483808752012,
+      "exact": 95.663512405931,
+      "mae": 0.11511809850234707
+    }
+  },
+  "train_minus_heldout_exact_gap": -0.6906103171882023,
+  "coverage": 4274,
+  "qwk_peer_vs_sub07_covered": 90.84403575216082,
+  "sd_score_covered": 2.7450391735712363,
+  "sd_score_uncovered": 2.6877722634472114,
+  "test_qwk": 86.93895852559855,
+  "test_qwk_covered_like": 86.33426274689417,
+  "test_qwk_uncovered_like": 87.4964716761776,
+  "required_subset_effect": 5.344035752160821,
+  "observed_subset_effect": -0.6046957787043823,
+  "verdict": "sents_RL on blind behaves like a PEER MODEL's prediction, not gold"
+}

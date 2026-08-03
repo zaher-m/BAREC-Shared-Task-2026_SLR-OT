@@ -1,0 +1,7 @@
+{
+  "peer_rows_on_test": 7286,
+  "peer_qwk_vs_gold_on_test": 98.31296889676373,
+  "greedy_weight_on_peer": 0.92,
+  "insample_without": 86.93895852559855,
+  "insample_with": 98.36472591094477
+}

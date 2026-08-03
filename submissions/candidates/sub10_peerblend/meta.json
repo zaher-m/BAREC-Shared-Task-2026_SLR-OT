@@ -1,0 +1,43 @@
+{
+  "name": "sub10_peerblend",
+  "base": "sub07_clean_k035_silver",
+  "base_blind_qwk_measured": 85.5,
+  "channel_A_gold_retrieval": {
+    "gate_cosine": 0.9,
+    "alpha": 0.5,
+    "rows": 244,
+    "coverage": 0.0302,
+    "dry_run_public_test": {
+      "coverage": 0.0557,
+      "label_precision": 0.953,
+      "qwk_gain": 0.094
+    },
+    "scaled_expected_gain": 0.051
+  },
+  "channel_B_peer_blend": {
+    "weight": 0.2,
+    "expansion": 1.02,
+    "rows": 4546,
+    "coverage": 0.5628,
+    "D_over_var": 0.488,
+    "peer_vs_gold_exact_by_split": {
+      "train": 94.2,
+      "validation": 94.12,
+      "test": 95.66
+    },
+    "peer_accuracy_on_blind": "unmeasurable, there is no gold on blind",
+    "projection_by_c": {
+      "1.0": 86.19,
+      "1.1": 86.02,
+      "1.2": 85.86,
+      "1.3": 85.7,
+      "1.5": 85.37,
+      "1.75": 84.96
+    }
+  },
+  "rows_changed_vs_base": 808,
+  "honest_summary": "Channel A is validated end to end and is worth about +0.05. Channel B is a bracketed bet: +0.6 if the peer is as strong as this ensemble, ~-0.15 if it is much weaker. Central estimate 85.8-86.1. Cannot be verified: the Testing Phase closed 2026-08-03 12:00 UTC.",
+  "recommended": false,
+  "do_not_upload": "Channel B was measured and rejected after this file was built. Projected ~85.4, below sub07's 85.50. Retained only as the record of a tested-and-rejected idea. Use sub10_retrieval_only instead.",
+  "projected_blind_qwk": 85.4
+}
