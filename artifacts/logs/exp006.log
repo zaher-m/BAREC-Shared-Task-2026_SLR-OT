@@ -1,0 +1,10 @@
+pool: 66 total | 39 train-only (dev genuinely held out)
+
+P66 test-only        greedy                  CV= 86.792
+P39 test-only        greedy                  CV= 86.410
+P39 dev+test (2x cal) greedy                 CV= 86.524
+P66 test-only        bagged greedy           CV= 86.796
+P39 test-only        bagged greedy           CV= 86.510
+P39 dev+test (2x cal) bagged greedy          CV= 86.487
+
+best: P66 / test only + bagged greedy = 86.796  -> implied blind 85.38

@@ -1,0 +1,20 @@
+pool 74 members
+
+top 6 by solo calibrated TEST QWK:
+   86.07  arabertv2_emd_d3
+   85.94  arabertv2_wkl_ad2
+   85.93  arabertv2_emd_slv   <-- SILVER
+   85.89  arabertv2_wkl_slvlr1   <-- SILVER
+   85.78  arabertv2_soft_slv   <-- SILVER
+   85.73  arabertv2_wkl_slv   <-- SILVER
+
+    pool     k   CV QWK  acc19   implied
+   cap30  0.35   86.663  38.75     85.21
+   cap30  0.50   86.629  39.61     85.18
+   clean  0.35   86.558  38.03     85.16
+   clean  0.50   86.553  38.92     85.15
+
+BEST: pool=cap30 k=0.35  CV=86.663  implied blind=85.21
+leader 85.3 | our best so far 85.2 | submit bar 85.5
+
+RECOMMENDATION: HOLD -- implied 85.21 is below the 85.5 bar; submitting is a coin flip against 85.3

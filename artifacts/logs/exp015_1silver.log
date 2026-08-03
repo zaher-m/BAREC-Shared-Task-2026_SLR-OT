@@ -1,0 +1,26 @@
+pool 70 | 27 contaminated | 1 silver: ['arabertv2_emd_slv']
+
+solo calibrated TEST QWK, best 8 members:
+   86.07  arabertv2_emd_d3
+   85.94  arabertv2_wkl_ad2  (contaminated)
+   85.93  arabertv2_emd_slv  <-- SILVER
+   85.56  arabertv2_wkl_ad  (contaminated)
+   85.55  arabertv2_large_soft_ad  (contaminated)
+   85.48  arabertv2_soft_ad  (contaminated)
+   85.46  arabertv2_large_corn
+   85.39  arabertv2_soft_d3
+
+      pool     k   CV QWK  acc19    +-1  implied blind
+     clean  0.35   86.624  39.07  72.59          85.22
+     clean  0.50   86.598  39.62  72.30          85.20
+     clean  0.65   86.635  40.45  72.11          85.24
+     cap30  0.35   86.713  38.65  73.00          85.29
+     cap30  0.50   86.668  39.68  72.67          85.25
+     cap30  0.65   86.703  40.52  72.55          85.28
+      free  0.35   86.805  39.17  73.26          84.91
+      free  0.50   86.766  40.01  72.98          84.87
+      free  0.65   86.731  40.60  72.73          84.83
+
+best by implied blind: pool=cap30 k=0.35 CV=86.713 -> 85.29   (sub02/sub04 = 85.2, leader = 85.3)
+
+offsets are per-pool because contamination changes them: -1.40 clean, -1.42 at 30% cap, -1.90 uncapped (measured on sub01/02/03).

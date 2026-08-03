@@ -1,0 +1,5 @@
+>>> 20:31:49 arabertv2_emd_c2 (emd/d3tok seed=777) CLEAN
+<<< 21:29:07 done arabertv2_emd_c2 (exit 0)
+>>> 21:29:37 arabertv2_wkl_c2 (wkl/d3tok seed=777) CLEAN
+<<< 22:19:59 done arabertv2_wkl_c2 (exit 0)
+>>> 22:20:27 araelectra_corn_c2 (corn/d3tok seed=777) CLEAN

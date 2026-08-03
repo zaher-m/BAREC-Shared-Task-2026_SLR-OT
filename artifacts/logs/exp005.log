@@ -1,0 +1,9 @@
+pool 66 | test (7286, 66)
+
+per-member score sd: min=2.657 max=3.212 ratio=1.21
+  widest : ['arabertv2_reg_ad 3.21', 'arbertv2_reg_d3 3.18', 'arabertv2_large_reg 3.16']
+  narrow : ['aramodern_soft_raw 2.66', 'camelbert_soft_d3 2.75', 'camelbert_corn_ad 2.76'] 
+
+raw scores       greedy         CV= 86.792
+raw scores       bagged greedy  CV= 86.796
+z-scored         greedy         CV= 86.692

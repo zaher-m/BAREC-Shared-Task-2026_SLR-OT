@@ -1,0 +1,14 @@
+66 members total | 39 clean (TEST never used in training or early stopping)
+
+combiner     threshold rule       CV QWK  acc19    +-1    MAE
+greedy       free (sub03 rule)    86.410  36.62  73.52  1.119
+greedy       prior-0.25           86.452  38.25  73.18  1.105
+greedy       prior-0.50           86.482  39.67  72.73  1.094
+greedy       prior-0.65           86.523  40.42  72.50  1.088
+bagged m.5   free (sub03 rule)    86.458  35.75  73.33  1.127
+bagged m.5   prior-0.25           86.513  37.39  72.96  1.113
+bagged m.5   prior-0.50           86.406  39.42  72.33  1.100
+bagged m.5   prior-0.65           86.399  40.23  71.96  1.096
+
+best on the clean pool: greedy + prior-0.65  CV=86.523
+  clean-pool offset is the sub01/sub02 one (-1.40) -> implied blind 85.12   (need > 85.30, sub02 = 85.2)

@@ -1,0 +1,11 @@
+clean pool: 66 members | test (7286, 66)
+
+greedy r25                   CV= 86.792  (116s)
+greedy r40                   CV= 86.756  (185s)
+bagged m.50 s1               CV= 86.796  (544s)
+bagged m.35 s1               CV= 86.736  (381s)
+bagged m.25 s1               CV= 86.852  (260s)
+bagged m.35 x3 seeds         CV= 86.804  (1096s)
+blend greedy+bagged+nnls     CV= 86.795  (470s)
+
+best: bagged m.25 s1  CV=86.852  -> implied blind 85.43  (need > 85.30)

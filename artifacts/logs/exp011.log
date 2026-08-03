@@ -1,0 +1,13 @@
+pool 66 | 27 contaminated (early-stopped on TEST)
+
+   cap     k  CV QWK*  acc19    +-1    MAE   ad_w
+  0.00  0.50   86.482  39.67  72.73  1.094   0.0%
+  0.20  0.50   86.620  39.77  72.50  1.090  19.8%
+  0.30  0.50   86.649  39.64  72.95  1.089  28.6%
+  0.40  0.50   86.747  40.27  72.88  1.081  38.6%
+  free  0.50   86.696  39.61  73.09  1.087  68.3%
+
+* CV is computed on the split the flagged members early-stopped on, so it is
+  inflated in proportion to the cap. Rising CV with rising cap is an artefact.
+  The cap is chosen from the three blind measurements (0% -> 85.0, 30% -> 85.2,
+  free -> 84.9), not from this column.

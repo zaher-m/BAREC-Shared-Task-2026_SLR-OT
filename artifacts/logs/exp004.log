@@ -1,0 +1,15 @@
+pool: 67 members | test (7286, 67) | 210 documents
+
+greedy [45-pool ref]             n= 45 thr=single CV= 86.785  (75s)
+greedy                           n= 67 thr=single CV= 86.715  (115s)
+greedy + bagged thr              n= 67 thr=bagged CV= 86.709  (117s)
+topk-20 uniform                  n= 67 thr=single CV= 86.275  (5s)
+topk-30 uniform                  n= 67 thr=single CV= 86.444  (5s)
+bagged greedy m.5                n= 67 thr=single CV= 86.811  (565s)
+bagged greedy m.35               n= 67 thr=single CV= 86.839  (380s)
+bagged greedy m.5 + rows.8       n= 67 thr=single CV= 86.808  (454s)
+bagged greedy m.5 + bagged thr   n= 67 thr=bagged CV= 86.930  (530s)
+
+best: bagged greedy m.5 + bagged thr  CV=86.930
+  vs 45-pool greedy reference 86.785  -> +0.145
+  implied blind (CV - 1.40)   85.53   (need > 85.3)
