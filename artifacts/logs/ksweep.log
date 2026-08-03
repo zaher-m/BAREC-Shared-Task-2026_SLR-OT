@@ -1,0 +1,6 @@
+sub07 pool = 47 members (scored 85.5 at k=0.35, CV 86.558)
+clean47        k=0.45  CV=86.539  acc19=38.70  adj=72.95  implied=85.46
+clean47        k=0.65  CV=86.555  acc19=39.87  adj=72.41  implied=85.47
+clean47        k=0.80  CV=86.578  acc19=40.72  adj=72.06  implied=85.50
+
+clean48        k=0.65  CV=86.424  acc19=39.69  adj=72.17  implied=85.34

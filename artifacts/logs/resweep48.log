@@ -1,0 +1,19 @@
+clean pool: 48 members (6 silver)
+new since sub07: ['arabertv2_wkl_slvB']
+
+solo QWK of the silver members:
+    85.93  arabertv2_emd_slv
+    85.64  arabertv2_large_emd_slv
+    85.78  arabertv2_soft_slv
+    85.73  arabertv2_wkl_slv
+    86.17  arabertv2_wkl_slvB
+    85.89  arabertv2_wkl_slvlr1
+
+combiner          k   CV QWK  acc19   implied
+greedy r30     0.25   86.475  37.54     85.42
+greedy r30     0.35   86.504  38.27     85.44
+bagged m.5     0.25   86.504  38.77     85.44
+bagged m.5     0.35   86.473  39.28     85.41
+
+best 86.504 (('bagged m.5', 0.25)) vs sub07 86.558 -> delta -0.054
+beat 85.5 needs CV >= 86.560
