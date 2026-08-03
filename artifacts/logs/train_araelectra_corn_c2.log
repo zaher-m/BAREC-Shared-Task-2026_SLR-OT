@@ -1,0 +1,12 @@
+Loading weights:   0%|          | 0/197 [00:00<?, ?it/s]Loading weights: 100%|██████████| 197/197 [00:00<00:00, 12601.85it/s]
+[transformers] [1mElectraModel LOAD REPORT[0m from: aubmindlab/araelectra-base-discriminator
+Key                                               | Status     |  | 
+--------------------------------------------------+------------+--+-
+discriminator_predictions.dense.bias              | UNEXPECTED |  | 
+discriminator_predictions.dense_prediction.weight | UNEXPECTED |  | 
+discriminator_predictions.dense_prediction.bias   | UNEXPECTED |  | 
+discriminator_predictions.dense.weight            | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+ep0 loss=0.2375 dev_QWK(naive)=75.103 826s

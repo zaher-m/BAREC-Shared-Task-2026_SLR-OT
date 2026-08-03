@@ -1,0 +1,26 @@
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9553.02it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: aubmindlab/bert-base-arabertv2
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[silver] loaded cached pretrained weights from /SLRA-OT/models/_silverckpt_aubmindlab-bert-base-arabertv2_wkl_d3tok.pt (stage 1 skipped)
+[gold] train=54845 dev=7310 (early stop) test=7286 (untouched)
+[gold] ep0 loss=1.3180 535s dev_QWK(naive)=83.582
+[gold] ep1 loss=1.1703 709s dev_QWK(naive)=82.774
+[gold] ep2 loss=1.0539 710s dev_QWK(naive)=82.943
+[gold] ep3 loss=0.9619 707s dev_QWK(naive)=82.487
+early stop
+[arabertv2_wkl_slvB DEV  cal] QWK=84.5297 Acc19=39.73 Acc7=60.08 Acc5=68.19 Acc3=76.57 Adj+-1=73.13 MAE=1.1707
+[arabertv2_wkl_slvB TEST cal] QWK=85.3572 Acc19=38.16 Acc7=59.39 Acc5=66.48 Acc3=73.92 Adj+-1=73.66 MAE=1.1388
+saved member arabertv2_wkl_slvB

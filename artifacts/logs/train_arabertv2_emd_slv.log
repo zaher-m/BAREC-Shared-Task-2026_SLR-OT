@@ -1,0 +1,25 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6657.89it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: aubmindlab/bert-base-arabertv2
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[silver] 438996 sentences, 1 epoch(s)
+[silver] ep0 loss=0.5083 3875s
+[gold] train=54845 dev=7310 (early stop) test=7286 (untouched)
+[gold] ep0 loss=0.7155 339s dev_QWK(naive)=84.084
+[gold] ep1 loss=0.6078 435s dev_QWK(naive)=83.559
+[gold] ep2 loss=0.5022 461s dev_QWK(naive)=83.226
+[gold] ep3 loss=0.4208 459s dev_QWK(naive)=82.958
+early stop
+[arabertv2_emd_slv DEV  cal] QWK=85.0109 Acc19=40.34 Acc7=61.78 Acc5=67.35 Acc3=76.11 Adj+-1=73.00 MAE=1.1514
+[arabertv2_emd_slv TEST cal] QWK=85.3604 Acc19=38.90 Acc7=60.69 Acc5=66.24 Acc3=73.61 Adj+-1=72.21 MAE=1.1414
+saved member arabertv2_emd_slv

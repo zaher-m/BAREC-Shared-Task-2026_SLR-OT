@@ -1,0 +1,12 @@
+{
+  "model": "aubmindlab/bert-base-arabertv2",
+  "variant": "d3tok",
+  "objective": "wkl",
+  "max_len": 160,
+  "tag": "arabertv2_wkl_slvlr1",
+  "kind": "silver_pretrained",
+  "silver_n": -1,
+  "silver_epochs": 1,
+  "gold_lr": 1e-05,
+  "note": "stage 1 reused cached silver weights; meta rebuilt after an UnboundLocalError crash in the --init_silver path (now fixed)"
+}

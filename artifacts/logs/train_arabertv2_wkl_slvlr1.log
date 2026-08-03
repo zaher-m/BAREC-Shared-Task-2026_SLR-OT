@@ -1,0 +1,32 @@
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10072.36it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: aubmindlab/bert-base-arabertv2
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[silver] loaded cached pretrained weights from /SLRA-OT/models/_silverckpt_wkl_d3tok.pt (stage 1 skipped)
+[gold] train=54845 dev=7310 (early stop) test=7286 (untouched)
+[gold] ep0 loss=1.3204 709s dev_QWK(naive)=83.613
+[gold] ep1 loss=1.1695 708s dev_QWK(naive)=83.110
+[gold] ep2 loss=1.0545 706s dev_QWK(naive)=83.354
+[gold] ep3 loss=0.9610 492s dev_QWK(naive)=82.981
+early stop
+[arabertv2_wkl_slvlr1 DEV  cal] QWK=84.6306 Acc19=39.51 Acc7=62.59 Acc5=68.96 Acc3=76.40 Adj+-1=73.50 MAE=1.1527
+[arabertv2_wkl_slvlr1 TEST cal] QWK=85.3072 Acc19=36.48 Acc7=61.14 Acc5=66.96 Acc3=73.72 Adj+-1=72.99 MAE=1.1467
+Traceback (most recent call last):
+  File "/SLRA-OT/scripts/train_silver.py", line 170, in <module>
+    main()
+  File "/SLRA-OT/scripts/train_silver.py", line 157, in main
+    "silver_n": int(len(sv)), "silver_epochs": args.silver_epochs,
+                        ^^
+UnboundLocalError: cannot access local variable 'sv' where it is not associated with a value
