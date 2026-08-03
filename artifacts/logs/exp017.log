@@ -1,0 +1,24 @@
+clean pool: 47 members (5 silver)
+
+sub07 reference: CV 86.558 -> blind 85.5 (offset -1.06)
+to beat 85.5 need CV >= 86.560
+
+combiner           k   CV QWK  acc19   implied
+greedy r30      free   86.468  35.78     85.41
+greedy r30      0.25   86.561  37.51     85.50
+greedy r30      0.35   86.558  38.03     85.50
+greedy r30      0.50   86.553  38.92     85.49
+greedy r20      free   86.395  35.23     85.34
+greedy r20      0.25   86.481  37.39     85.42
+greedy r20      0.35   86.500  37.87     85.44
+greedy r20      0.50   86.483  38.68     85.42
+bagged m.5      free   86.512  37.02     85.45
+bagged m.5      0.25   86.558  38.37     85.50
+bagged m.5      0.35   86.513  38.97     85.45
+bagged m.5      0.50   86.464  39.90     85.40
+bagged m.35     free   86.519  37.50     85.46
+bagged m.35     0.25   86.608  39.34     85.55
+bagged m.35     0.35   86.578  39.68     85.52
+bagged m.35     0.50   86.580  40.34     85.52
+
+BEST clean: bagged m.35 k=0.25  CV=86.608 -> implied 85.55
