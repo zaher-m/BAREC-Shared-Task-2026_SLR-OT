@@ -1,0 +1,35 @@
+{
+  "results": [
+    {
+      "transform": "rank-normalised",
+      "combiner": "bagged greedy",
+      "cv_qwk": 86.87623453942703
+    },
+    {
+      "transform": "z-scored",
+      "combiner": "bagged greedy",
+      "cv_qwk": 86.81340607749434
+    },
+    {
+      "transform": "raw scores",
+      "combiner": "bagged greedy",
+      "cv_qwk": 86.79620140068
+    },
+    {
+      "transform": "raw scores",
+      "combiner": "greedy",
+      "cv_qwk": 86.79231060537836
+    },
+    {
+      "transform": "rank-normalised",
+      "combiner": "greedy",
+      "cv_qwk": 86.77144261997458
+    },
+    {
+      "transform": "z-scored",
+      "combiner": "greedy",
+      "cv_qwk": 86.6924468560552
+    }
+  ],
+  "sd_ratio": 1.208997297144271
+}
