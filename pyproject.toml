@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "BAREC_slra-ot"
+version = "1.0.0"
+description = "Sentence-level Arabic readability assessment, BAREC 2026 Open Track (blind QWK 85.5, rank 1)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "zaher-m" }]
+keywords = ["arabic", "readability", "ordinal-regression", "ensemble", "barec"]
+# The ensemble side only needs the scientific stack, so `pip install -e .` is enough to
+# re-run the experiments. Training and preprocessing pull in the heavy extras.
+dependencies = [
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "pandas",
+    "pyarrow",
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+train = ["torch", "transformers", "accelerate", "datasets", "huggingface_hub", "peft"]
+preprocess = ["camel-tools"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+# E731 (lambda assignment) and E741 (ambiguous name) are allowed: the maths in this
+# codebase is written the way it appears on paper, where `l` is a level and a one-line
+# lambda is clearer than a def.
+ignore = ["E731", "E741"]
+
+[tool.ruff.lint.per-file-ignores]
+# Experiment scripts are kept as they were run; a few reporting lines overrun.
+"experiments/**" = ["E501"]
