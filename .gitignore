@@ -1,0 +1,38 @@
+# Trained weights: ~51 GB over 76 member directories. Retrainable from configs/campaigns/
+artifacts/models/
+
+# Ensembles written by slra_ot.cli.select_ensemble; regenerable from the score caches
+artifacts/ensembles/
+
+# Scratch output when re-running experiments or builds; nothing here is a record
+artifacts/regenerated/
+
+# BAREC corpus and the preprocessed variants. See data/README.md.
+data/*
+!data/README.md
+
+# Paper drafts
+paper/
+docs/
+
+# Local checkout of the official evaluator
+barec-eval/
+
+# Environment
+.venv
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Packaging metadata: `pip install -e .` writes *.egg-info carrying the author field
+*.egg-info/
+build/
+dist/
+
+# Local editor/tool settings
+*.local.json
+.DS_Store
+
+
+*.zip
