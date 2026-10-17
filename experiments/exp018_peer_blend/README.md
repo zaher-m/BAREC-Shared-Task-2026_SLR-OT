@@ -322,7 +322,7 @@ re-run without redoing the corpus scan:
 
 The peer arrays are numeric values derived from BAREC-10M (Elmadani et al., CC-BY-SA-4.0)
 aligned to the blind row order. They carry no text. Attribution is in
-[docs/data.md](../../docs/data.md).
+the project's data notes.
 
 ## Reproducing this
 

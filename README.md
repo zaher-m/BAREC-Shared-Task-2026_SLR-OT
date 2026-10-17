@@ -25,7 +25,7 @@ Scores as published on the [shared task results page](https://barec.camel-lab.co
 We lead the baseline on the ranked metric and trail it on exact accuracy, which is the metric's
 algebra rather than noise: across teams, systems 10 points more accurate at exact-level prediction
 score about 5 QWK lower. Acc<sub>19</sub> is never a selection proxy here
-([docs/evaluation.md](docs/evaluation.md)). Our Strict-track system scores 85.0 and also places 2nd;
+Our Strict-track system scores 85.0 and also places 2nd;
 it lives in the companion repository
 [BAREC-Shared-Task-2026_SLR-ST](https://github.com/zaher-m/BAREC-Shared-Task-2026_SLR-ST).
 
@@ -49,7 +49,7 @@ Nothing from the withdrawn system is reported as a result, here or in the paper.
 Parts of the negative-results catalog were also measured on the public test split, which was held
 out from training for every model family involved. None of those changes was adopted, and the
 official system is selected and calibrated on the development split alone.
-[docs/compliance.md](docs/compliance.md) holds the component-by-component audit.
+The repository's internal compliance notes hold the component-by-component audit.
 
 ## The official system
 
@@ -72,20 +72,19 @@ What moved the number, in order of measured effect:
    ([exp017](experiments/exp017_clean_sweep/)).
 
 The paper reports ten changes that did not help on this track, each measured under a held-out
-protocol; the fuller catalog is in [docs/negative-results.md](docs/negative-results.md).
+protocol.
 
 ## The finding that outlived the ranking
 
 Contamination is invisible to the measurement that suffers from it. Members that early-stopped on
 the calibration split score 1.06 QWK higher there than they deserve (n = 18, recomputed by
 `make verify`), and no estimate computed on that split can see it. The local-to-blind gap therefore
-depends on the contaminated weight: −1.06 clean, −1.36 to −1.42 at a 30% cap, −1.90 uncapped
-([docs/evaluation.md](docs/evaluation.md)). The official pool admits members by what their early
+depends on the contaminated weight: −1.06 clean, −1.36 to −1.42 at a 30% cap, −1.90 uncapped.
+The official pool admits members by what their early
 stopping saw, which is why it is called the clean pool.
 
 Start with `make verify`: it re-derives every uploaded file from the committed caches, row by row,
-and recomputes the headline chain forward, with no GPU and no corpus
-([docs/reproduce.md](docs/reproduce.md)).
+and recomputes the headline chain forward, with no GPU and no corpus.
 
 ## Layout
 
@@ -97,8 +96,6 @@ experiments/        expNNN_<question>/{README.md, run.py, pool.txt, results.json
 analysis/           diagnostics that are not registered experiments
 artifacts/          committed: member score caches, training logs; gitignored: weights, scratch
 submissions/        submitted/ (the evaluation-phase uploads), candidates/ (built later)
-docs/               task, compliance, data, method, evaluation, experiments, results,
-                    findings, negative-results, members, reproduce, reproducibility
 data/               a README only; the corpus is not redistributed
 tests/              the threshold optimiser against a reference implementation
 ```
@@ -110,12 +107,12 @@ make setup && make verify        # every number re-derived from the committed ca
 python experiments/exp017_clean_sweep/run.py   # any experiment re-runs the same way
 ```
 
-Retraining the pool (GPU, corpus) is [docs/reproduce.md](docs/reproduce.md) Level 2.
+Retraining the pool needs a GPU and the corpus; `make setup` documents the stages.
 
 ## Experiments
 
-18 experiments, one directory per question, including the refuted ones; the registry with verdicts
-is [docs/experiments.md](docs/experiments.md). The ones that carried the result: exp009 (threshold
+18 experiments, one directory per question, including the refuted ones, each with its own
+README. The ones that carried the result: exp009 (threshold
 regularisation), exp010 (contamination measured), exp014 (silver pretraining), exp017 (the clean
 sweep), exp018 (the leak investigation that cleared BAREC-10M's label field). Experiments whose
 estimates were computed on the public test split are marked as such in the registry; they informed
@@ -124,6 +121,4 @@ no part of the official system.
 ## Licence and data
 
 Code under the [MIT License](LICENSE). BAREC and BAREC-10M are CC-BY-SA-4.0 and are not
-redistributed here beyond derived score caches and label vectors
-([docs/compliance.md](docs/compliance.md#corpus-redistribution),
-[docs/data.md](docs/data.md)).
+redistributed here beyond derived score caches and label vectors.

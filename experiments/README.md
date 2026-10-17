@@ -47,7 +47,7 @@ ten of exp018's recorded steps. Two things to know before running the comparison
 
 The uploaded submissions are checked the same way, by `make verify`: every recorded upload rebuilds
 from its recorded weights and cuts on all 8,077 rows, and sub07 rebuilds from the pool through
-the whole selection pipeline. See [docs/reproducibility.md](../docs/reproducibility.md).
+the whole selection pipeline.
 
 What none of this covers: the member scores themselves. Retraining a member reproduces its QWK
 to within a few hundredths rather than bit-exactly, since bf16 autocast and cuDNN kernel

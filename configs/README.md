@@ -6,4 +6,4 @@
   member: backbone, objective, variant, seed, protocol flags. `slra_ot.cli.run_campaign`
   executes them and skips members whose score caches already exist, so an interrupted queue
   restarts cleanly. The 52 members that predate the campaign runner are inventoried in
-  [docs/members.md](../docs/members.md) instead.
+  the member tables instead.

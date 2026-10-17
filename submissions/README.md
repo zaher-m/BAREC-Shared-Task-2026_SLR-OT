@@ -2,7 +2,7 @@
 
 The complete upload record. `make verify` re-derives every file here from the committed score
 caches and diffs it row by row; blind scores are the platform's and are marked † in
-[docs/results.md](../docs/results.md).
+the official standings in the top-level README.
 
 - `submitted/` — the 8 uploads to CodaBench: the `prediction` CSV exactly as it went inside
   the uploaded archive, plus the `meta.json` (or `ensemble.json` for sub01) recording pool,

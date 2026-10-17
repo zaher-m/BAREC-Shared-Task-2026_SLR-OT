@@ -1,7 +1,7 @@
 # data/
 
 Not tracked by git. The corpora belong to their authors and are not redistributed here. See
-[docs/data.md](../docs/data.md) for sources, licences and the dev/test exclusion applied to the
+The project notes cover sources, licences and the dev/test exclusion applied to the
 silver corpus.
 
 Expected layout:
