@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "BAREC_slra-ot"
 version = "1.0.0"
-description = "Sentence-level Arabic readability assessment, BAREC 2026 Open Track (blind QWK 85.5, rank 1)"
+description = "Sentence-level Arabic readability assessment, BAREC 2026 Open Track (official blind QWK 85.2, 2nd of 4)"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
